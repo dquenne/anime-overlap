@@ -16,6 +16,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: cd ui
-      - run: yarn build
-      - run: yarn test
+      - run: cd ui && yarn build
+      - run: cd ui && yarn test
