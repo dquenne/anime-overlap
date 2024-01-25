@@ -1,8 +1,7 @@
-name: UI Github Actions
+name: UI
 
 on:
   push:
-    branches: [ $default-branch ]
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [ $default-branch ]
@@ -17,5 +16,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+      - run: yarn install
+        working-directory: ./ui
       - run: yarn build
+        working-directory: ./ui
       - run: yarn test
+        working-directory: ./ui
