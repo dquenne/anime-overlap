@@ -1,4 +1,4 @@
-name: UI Github Actions
+name: UI
 
 on:
   push:
