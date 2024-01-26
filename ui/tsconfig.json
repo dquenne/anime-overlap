@@ -23,7 +23,7 @@
     "plugins": [
       {
         "name": "@0no-co/graphqlsp",
-        "schema": "./schema.graphql",
+        "schema": "https://graphql.anilist.co/",
         "tadaOutputLocation": "./src/graphql-env.d.ts"
       }
     ]
