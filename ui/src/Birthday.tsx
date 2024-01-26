@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useQuery } from "urql";
 import { graphql } from "gql.tada";
 
