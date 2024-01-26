@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Client, Provider, cacheExchange, fetchExchange } from "urql"
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { Client, Provider, cacheExchange, fetchExchange } from "urql";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 import { Birthday } from "./Birthday";
 
@@ -12,7 +12,7 @@ const client = new Client({
 });
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -40,7 +40,7 @@ function App() {
         </p>
       </Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
