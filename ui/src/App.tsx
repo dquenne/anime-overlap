@@ -5,6 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import { Birthday } from "./Birthday";
+import { Staff } from "./Staff";
 
 const client = new Client({
   url: "https://graphql.anilist.co",
@@ -12,7 +13,8 @@ const client = new Client({
 });
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [staffId, setStaffId] = useState<string>("");
+  const [tempStaffId, setTempStaffId] = useState<string>("");
 
   return (
     <>
@@ -26,11 +28,15 @@ function App() {
           </a>
         </div>
         <h1>Vite + React</h1>
-        <Birthday />
+        <div>
+          <Staff staffId={staffId} />
+        </div>
         <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
+          <input
+            type="number"
+            onChange={(event) => setTempStaffId(event.target.value)}
+          />
+          <button onClick={() => setStaffId(tempStaffId)}>Update</button>
           <p>
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>
