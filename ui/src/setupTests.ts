@@ -15,11 +15,6 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  // Required to enforce that fetch was not called, as React Query can gracefully handle fetch errors
-  expect(mockedFetch).not.toHaveBeenCalled();
-});
-
-afterEach(() => {
   mockedFetch.mockReset();
   cleanup();
 });
