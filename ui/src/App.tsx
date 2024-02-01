@@ -4,7 +4,6 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import { Birthday } from "./Birthday";
 import { Staff } from "./Staff";
 
 const client = new Client({
