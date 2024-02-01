@@ -16,6 +16,23 @@ export const staffInfoFragment = graphql(`
   }
 `);
 
+/**
+ * These queries are doing some questionable stuff. The AniList API is great
+ * but it has one troublesome limitation: any list of objects is strictly
+ * limited to pages of no more than 25 entries. This is a workaround to avoid
+ * making n+1 API calls to AniList to get a full list of IDs. The reason this
+ * is split up into 3 queries is that if all 40 pages of each category were in
+ * one query, the complexity would be too high.
+ *
+ * The hook that uses these queries checks if there are still more entries
+ * after the first query before using the other queries, meaning for most
+ * staff, we'll get all the information we need from one API call.
+ *
+ * These queries also have to be fully written out for the automatically
+ * generated TypeScript definitions to work. (I tried doing a simple map
+ * over page number and joining the strings, but gql.tada can't evaluate and
+ * parse that)
+ */
 export const StaffMediaQuery = graphql(
   `
     query staffRoles($staffId: Int) {

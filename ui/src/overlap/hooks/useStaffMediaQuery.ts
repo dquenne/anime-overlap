@@ -5,6 +5,14 @@ import {
   StaffRoleMediaQueryBatch2,
 } from "../queries/staffMedia";
 
+/**
+ * Makes 1-3 API calls to fetch all the Media a Staff has ever worked on. As
+ * long as the Staff has not voices more than 450 characters or had more than
+ * 175 staff roles, this will only make 1 API call.
+ *
+ * See StaffMediaQuery's jsdoc for why this has to merge these pages in such an
+ * ugly way.
+ */
 export function useStaffMediaQuery(staffId: number) {
   const [firstBatchResult] = useQuery({
     query: StaffMediaQuery,
