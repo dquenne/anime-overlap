@@ -17,6 +17,7 @@ export function useStaffMediaQuery(staffId: number) {
   const [firstBatchResult] = useQuery({
     query: StaffMediaQuery,
     variables: { staffId },
+    pause: isNaN(staffId),
   });
 
   const [characterBatch2Result] = useQuery({

@@ -32,6 +32,9 @@ export function Staff(props: { staffId: string }) {
   if (queryResult.error) {
     return <>Failed to fetch Staff information.</>;
   }
+  if (!queryResult.data.Staff) {
+    return <>Enter an AniList Staff ID to look up credits.</>;
+  }
 
   return (
     <>
