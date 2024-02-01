@@ -4,7 +4,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import { Staff } from "./Staff";
+import { Staff } from "./overlap/Staff";
 
 const client = new Client({
   url: "https://graphql.anilist.co",
